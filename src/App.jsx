@@ -40,16 +40,20 @@ const HomePage = () => {
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="container">
         <a href="/" className="logo">Spark<span>Elec</span></a>
         
         <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
-          <a href="#services">Services</a>
-          <a href="#why-us">Why Us</a>
-          <a href="#testimonials">Reviews</a>
-          <a href="#contact" className="cta-button">Get Quote</a>
+          <a href="#services" onClick={closeMenu}>Services</a>
+          <a href="#why-us" onClick={closeMenu}>Why Us</a>
+          <a href="#testimonials" onClick={closeMenu}>Reviews</a>
+          <a href="#contact" className="cta-button" onClick={closeMenu}>Get Quote</a>
         </div>
         
         <button 
